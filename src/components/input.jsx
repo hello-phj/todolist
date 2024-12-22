@@ -1,10 +1,21 @@
-function Test({ hello }) {
+import { useState } from "react";
+
+function Input() {
+  const [textValue, setTextValue] = useState;
+
+  function addtext(event) {
+    event.preventdefault();
+    setTextValue(event.target.inputtext.value);
+    console.log(textValue);
+  }
   return (
-    <>
-      <div>helloworld!</div>
-      <div>{hello}</div>
-    </>
+    <div>
+      <form onSubmit={addtext}>
+        <button>+</button>
+        <input type="text" name="inputtext" />
+      </form>
+    </div>
   );
 }
 
-export default Test;
+export default Input;
